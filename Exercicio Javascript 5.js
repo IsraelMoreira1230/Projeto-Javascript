@@ -1,45 +1,24 @@
-let month = prompt("Insira o nome do mês: ").toLowerCase();
-let days;
-
-switch (month) {
-    case "janeiro":
-        days = 31;
-        break;
-    case "fevereiro":
-        days = 28;
-        break;
-    case "março":
-        days = 31;
-        break;
-    case "abril":
-        days = 30;
-        break;
-    case "maio":
-        days = 31;
-        break;
-    case "junho":
-        days = 30;
-        break;
-    case "julho":
-        days = 31;
-        break;
-    case "agosto":
-        days = 31;
-        break;
-    case "setembro":
-        days = 30;
-        break;
-    case "outubro":
-        days = 31;
-        break;
-    case "novembro":
-        days = 30;
-        break;
-    case "dezembro":
-        days = 31;
-        break;
-    default:
-        console.log("Mês inválido");
-        return;
-}
-console.log("O mês de " + month + " tem " + days + " dias.");
+function getDaysInMonth(month) {
+    switch (month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        return 31;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        return 30;
+      case 2:
+        return 28;
+      default:
+        return 'Invalid Month';
+    }
+  }
+  
+  const month = 3;
+  console.log(`O mês ${month} tem ${getDaysInMonth(month)} dias.`);
